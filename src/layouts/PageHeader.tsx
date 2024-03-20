@@ -22,7 +22,6 @@ export function PageHeader() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log("Hi");
     const handleResize = () => {
       if (window.innerWidth > mdBreakpoint) setShowFullWidthSearch(false);
     };
