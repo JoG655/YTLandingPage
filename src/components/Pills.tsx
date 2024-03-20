@@ -48,24 +48,8 @@ export function Pills({ items, selectedItem, onSelectItem }: PillsProps) {
       ref={containerRef}
       className="relative flex items-center overflow-x-hidden"
     >
-      <div
-        className="flex w-[max-content] transform gap-3 whitespace-nowrap transition-transform"
-        style={{ transform: `translateX(-${translateOffset}px)` }}
-      >
-        {items.map((i) => (
-          <Button
-            key={i}
-            variant={selectedItem === i ? "dark" : "default"}
-            content="default"
-            className="whitespace-nowrap rounded-lg px-3 py-1"
-            onClick={() => onSelectItem(i)}
-          >
-            {i}
-          </Button>
-        ))}
-      </div>
       {isLeftVisible && (
-        <div className="absolute left-0 h-full w-24 bg-gradient-to-r from-white from-50% to-transparent">
+        <div className="absolute left-0 z-20 h-full w-24 bg-gradient-to-r from-white from-50% to-transparent">
           <Button
             variant="ghost"
             content="icon"
@@ -82,8 +66,24 @@ export function Pills({ items, selectedItem, onSelectItem }: PillsProps) {
           </Button>
         </div>
       )}
+      <div
+        className="flex w-[max-content] transform gap-3 whitespace-nowrap transition-transform"
+        style={{ transform: `translateX(-${translateOffset}px)` }}
+      >
+        {items.map((i) => (
+          <Button
+            key={i}
+            variant={selectedItem === i ? "dark" : "default"}
+            content="default"
+            className="whitespace-nowrap rounded-lg px-3 py-1"
+            onClick={() => onSelectItem(i)}
+          >
+            {i}
+          </Button>
+        ))}
+      </div>
       {isRightVisible && (
-        <div className="absolute right-0 h-full w-24 bg-gradient-to-l from-white from-50% to-transparent">
+        <div className="absolute right-0 z-20 h-full w-24 bg-gradient-to-l from-white from-50% to-transparent">
           <Button
             variant="ghost"
             content="icon"
