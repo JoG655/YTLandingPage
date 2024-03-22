@@ -16,7 +16,7 @@ export default function App() {
     <SidebarProvider>
       <div className="flex max-h-screen flex-col">
         <PageHeader />
-        <div className="flex-grow-1 grid grid-cols-[auto,minmax(0,1fr)] overflow-auto">
+        <div className="grid flex-grow grid-cols-[auto,minmax(0,1fr)] overflow-auto">
           {<Sidebar />}
           <div className="overflow-x-hidden px-8 pb-4">
             <div className="sticky top-0 z-10 bg-white pb-4">
